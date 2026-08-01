@@ -397,6 +397,39 @@
   }
   .card .btn-ghost { margin-top: 18px; }
 
+  .hotel-list { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+  .hotel-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(201,168,76,.2);
+    border-radius: 10px;
+    background: rgba(255,255,255,.02);
+  }
+  .hotel-item .hotel-name {
+    font-family: var(--cm);
+    color: var(--ivory);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .hotel-item .hotel-map {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,.5);
+    color: var(--gold);
+    text-decoration: none;
+    transition: background .3s ease;
+  }
+  .hotel-item .hotel-map:hover { background: rgba(201,168,76,.12); }
+  .hotel-item .hotel-map svg { width: 14px; height: 14px; }
+
   /* =================== RSVP =================== */
   .rsvp {
     text-align: center;
@@ -719,12 +752,40 @@
       <div class="card reveal d3">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14M3 21h18M9 21v-5h6v5M7 10h.01M12 10h.01M17 10h.01M7 14h.01M17 14h.01"/></svg>
         <h4>Hospedaje</h4>
-        <p class="big">Cerca de Las Fuentes</p>
-        <p>Hoteles a pocos minutos del venue, en la zona 78253 de San Antonio.</p>
-        <a class="btn-ghost" href="https://www.google.com/maps/search/hotels+near+78253+San+Antonio+TX" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          Buscar hoteles
-        </a>
+        <p class="big">Hoteles recomendados</p>
+        <p>Algunas opciones cerca del venue, en el noroeste de San Antonio.</p>
+        <div class="hotel-list">
+          <div class="hotel-item">
+            <span class="hotel-name">Fairfield by Marriott Inn &amp; Suites San Antonio SeaWorld/Westover Hills</span>
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Fairfield+by+Marriott+Inn+%26+Suites+San+Antonio+SeaWorld+Westover+Hills+4026+Wiseman+Blvd+San+Antonio+TX+78251" target="_blank" rel="noopener" aria-label="Ver en mapa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+          </div>
+          <div class="hotel-item">
+            <span class="hotel-name">Courtyard San Antonio SeaWorld®/Westover Hills</span>
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Courtyard+San+Antonio+SeaWorld+Westover+Hills+11605+State+Hwy+151+San+Antonio+TX+78251" target="_blank" rel="noopener" aria-label="Ver en mapa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+          </div>
+          <div class="hotel-item">
+            <span class="hotel-name">Holiday Inn Express &amp; Suites San Antonio NW Near SeaWorld</span>
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+%26+Suites+San+Antonio+NW+Near+Seaworld+9536+Amelia+Pass+San+Antonio+TX+78254" target="_blank" rel="noopener" aria-label="Ver en mapa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+          </div>
+          <div class="hotel-item">
+            <span class="hotel-name">Candlewood Suites San Antonio NW Near SeaWorld</span>
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Candlewood+Suites+San+Antonio+NW+Near+Seaworld+9502+Amelia+Pass+San+Antonio+TX+78254" target="_blank" rel="noopener" aria-label="Ver en mapa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+          </div>
+          <div class="hotel-item">
+            <span class="hotel-name">La Quinta Inn &amp; Suites by Wyndham San Antonio Northwest</span>
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=La+Quinta+Inn+%26+Suites+by+Wyndham+San+Antonio+Northwest+11155+W+Loop+1604+N+San+Antonio+TX+78254" target="_blank" rel="noopener" aria-label="Ver en mapa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
