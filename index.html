@@ -528,10 +528,45 @@
     color: var(--gold);
     margin-top: 14px;
   }
+
+  /* =================== LANGUAGE TOGGLE =================== */
+  .lang-toggle-wrap {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    height: 0;
+    z-index: 50;
+    pointer-events: none;
+  }
+  .lang-toggle {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    pointer-events: auto;
+    font-family: var(--lt);
+    font-weight: 400;
+    letter-spacing: .12em;
+    font-size: 11px;
+    color: var(--gold-lt);
+    background: rgba(6,21,9,.55);
+    border: 1px solid rgba(201,168,76,.55);
+    border-radius: 100px;
+    padding: 8px 15px;
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    transition: background .3s ease, color .3s ease;
+  }
+  .lang-toggle:hover { background: rgba(201,168,76,.18); color: var(--ivory); }
 </style>
 </head>
 <body>
 <div class="backdrop"></div>
+
+<div class="lang-toggle-wrap">
+  <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language / Cambiar idioma">EN</button>
+</div>
 
 <main class="shell">
 
@@ -542,7 +577,7 @@
     <div class="veil"></div>
 
     <div class="hero-inner">
-      <p class="invite-line">Nancy Sánchez &amp; Juan Martínez te invitan a celebrar</p>
+      <p class="invite-line" data-i18n="hero.invite">Nancy Sánchez &amp; Juan Martínez te invitan a celebrar</p>
 
       <svg class="crown" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M8 46 L12 22 L24 36 L32 16 L40 36 L52 22 L56 46 Z"
@@ -562,13 +597,13 @@
       </svg>
 
       <h1>Alexandra<span class="amp">~</span>Ruby</h1>
-      <p class="sub">Quinceañera · XV Años</p>
-      <p class="date">Sábado 15 de Agosto · 2026</p>
+      <p class="sub" data-i18n="hero.sub">Quinceañera · XV Años</p>
+      <p class="date" data-i18n="hero.date">Sábado 15 de Agosto · 2026</p>
 
       <div class="cta">
         <a class="btn-gold" href="https://maps.google.com/?q=11624+W+Culebra+Rd+San+Antonio+TX+78253" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Cómo llegar
+          <span data-i18n="hero.cta">Cómo llegar</span>
         </a>
       </div>
     </div>
@@ -578,48 +613,48 @@
 
   <!-- ===================== PADRINOS ===================== -->
   <section class="padrinos" data-screen-label="Padrinos">
-    <p class="eyebrow reveal">Con la bendición de</p>
-    <h2 class="sec-title reveal d1">Padrinos</h2>
+    <p class="eyebrow reveal" data-i18n="padrinos.eyebrow">Con la bendición de</p>
+    <h2 class="sec-title reveal d1" data-i18n="padrinos.title">Padrinos</h2>
     <div class="divider reveal d1"><span class="line"></span><span class="dot"></span><span class="line r"></span></div>
 
     <div class="padrino-grid">
       <div class="padrino reveal d1">
-        <p class="role">Padrinos de Honor y Anillo</p>
+        <p class="role" data-i18n="padrinos.honorRing">Padrinos de Honor y Anillo</p>
         <p class="name">Alma y Juan Espinoza</p>
       </div>
       <div class="padrino reveal d2">
-        <p class="role">Padrinos de Biblia y Rosario</p>
+        <p class="role" data-i18n="padrinos.bibleRosary">Padrinos de Biblia y Rosario</p>
         <p class="name">Miriam y Naro Mancillas</p>
       </div>
     </div>
 
-    <p class="eyebrow reveal" style="margin-top:54px;">Los siguientes</p>
-    <h3 class="sec-title reveal d1" style="font-size:26px;margin-top:4px;">Patrocinadores</h3>
+    <p class="eyebrow reveal" style="margin-top:54px;" data-i18n="padrinos.following">Los siguientes</p>
+    <h3 class="sec-title reveal d1" style="font-size:26px;margin-top:4px;" data-i18n="padrinos.sponsors">Patrocinadores</h3>
     <div class="divider reveal d1"><span class="line"></span><span class="dot"></span><span class="line r"></span></div>
 
     <div class="padrino-grid" style="margin-top:32px;">
       <div class="padrino reveal d1">
-        <p class="role">De Corona</p>
+        <p class="role" data-i18n="padrinos.crown">De Corona</p>
         <p class="name">Karina y Agustín Limón</p>
       </div>
       <div class="padrino reveal d1">
-        <p class="role">De Vestido y Último Oso</p>
+        <p class="role" data-i18n="padrinos.dress">De Vestido y Último Oso</p>
         <p class="name">Nancy y Edwin Ballesteros Arriaga</p>
       </div>
       <div class="padrino reveal d2">
-        <p class="role">De Esclava</p>
+        <p class="role" data-i18n="padrinos.bracelet">De Esclava</p>
         <p class="name">Alondra Hernández y Jorge Santian</p>
       </div>
       <div class="padrino reveal d2">
-        <p class="role">De Aretes</p>
+        <p class="role" data-i18n="padrinos.earrings">De Aretes</p>
         <p class="name">Stephanie y Esaul García</p>
       </div>
       <div class="padrino reveal d3">
-        <p class="role">De Collar</p>
+        <p class="role" data-i18n="padrinos.necklace">De Collar</p>
         <p class="name">Mariah Valdez</p>
       </div>
       <div class="padrino reveal d3">
-        <p class="role">Regalo Sorpresa · Sus Hermanos</p>
+        <p class="role" data-i18n="padrinos.surpriseGift">Regalo Sorpresa · Sus Hermanos</p>
         <p class="name">Orlando y Juan Martinez</p>
       </div>
     </div>
@@ -627,10 +662,10 @@
 
   <!-- ===================== CORTE DE HONOR ===================== -->
   <section class="corte" data-screen-label="Corte de Honor">
-    <p class="eyebrow reveal">Quienes me acompañan</p>
-    <h2 class="sec-title reveal d1">Corte de Honor</h2>
+    <p class="eyebrow reveal" data-i18n="corte.eyebrow">Quienes me acompañan</p>
+    <h2 class="sec-title reveal d1" data-i18n="corte.title">Corte de Honor</h2>
     <div class="divider reveal d1"><span class="line"></span><span class="dot"></span><span class="line r"></span></div>
-    <p class="lead reveal d1">Mis estrellas en esta noche encantada</p>
+    <p class="lead reveal d1" data-i18n="corte.lead">Mis estrellas en esta noche encantada</p>
 
     <div class="corte-cols" style="grid-template-columns:1fr;">
       <div class="corte-col reveal d1">
@@ -646,8 +681,8 @@
 
   <!-- ===================== PROGRAMA ===================== -->
   <section class="programa" data-screen-label="Programa">
-    <p class="eyebrow reveal">El orden de la celebración</p>
-    <h2 class="sec-title reveal d1">Programa</h2>
+    <p class="eyebrow reveal" data-i18n="programa.eyebrow">El orden de la celebración</p>
+    <h2 class="sec-title reveal d1" data-i18n="programa.title">Programa</h2>
     <div class="divider reveal d1"><span class="line"></span><span class="dot"></span><span class="line r"></span></div>
 
     <div class="timeline">
@@ -658,11 +693,11 @@
         </div>
         <div class="tl-body">
           <p class="tl-time">5:00 PM</p>
-          <p class="tl-name">Recepción</p>
-          <p class="tl-note">Salón Las Fuentes · Bienvenida</p>
+          <p class="tl-name" data-i18n="programa.reception">Recepción</p>
+          <p class="tl-note" data-i18n="programa.receptionNote">Salón Las Fuentes · Bienvenida</p>
           <a class="btn-ghost" href="https://maps.google.com/?q=11624+W+Culebra+Rd+San+Antonio+TX+78253" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Ubicación
+            <span data-i18n="programa.location">Ubicación</span>
           </a>
         </div>
       </div>
@@ -673,8 +708,8 @@
         </div>
         <div class="tl-body">
           <p class="tl-time">6:00 PM</p>
-          <p class="tl-name">Cena</p>
-          <p class="tl-note">Brindis &amp; banquete</p>
+          <p class="tl-name" data-i18n="programa.dinner">Cena</p>
+          <p class="tl-note" data-i18n="programa.dinnerNote">Brindis &amp; banquete</p>
         </div>
       </div>
 
@@ -684,8 +719,8 @@
         </div>
         <div class="tl-body">
           <p class="tl-time">7:15 PM</p>
-          <p class="tl-name">Presentación / Vals</p>
-          <p class="tl-note">El primer baile de Alexandra</p>
+          <p class="tl-name" data-i18n="programa.presentation">Presentación / Vals</p>
+          <p class="tl-note" data-i18n="programa.presentationNote">El primer baile de Alexandra</p>
         </div>
       </div>
 
@@ -695,8 +730,8 @@
         </div>
         <div class="tl-body">
           <p class="tl-time">8:00 PM</p>
-          <p class="tl-name">Fiesta</p>
-          <p class="tl-note">Baile bajo las luces del jardín</p>
+          <p class="tl-name" data-i18n="programa.party">Fiesta</p>
+          <p class="tl-note" data-i18n="programa.partyNote">Baile bajo las luces del jardín</p>
         </div>
       </div>
 
@@ -706,7 +741,7 @@
         </div>
         <div class="tl-body">
           <p class="tl-time">9:30 PM</p>
-          <p class="tl-name">Baile Sorpresa / Regalo</p>
+          <p class="tl-name" data-i18n="programa.surprise">Baile Sorpresa / Regalo</p>
         </div>
       </div>
 
@@ -716,8 +751,8 @@
         </div>
         <div class="tl-body">
           <p class="tl-time">12:00 AM</p>
-          <p class="tl-name">Cierre</p>
-          <p class="tl-note">Hasta que las estrellas se apaguen</p>
+          <p class="tl-name" data-i18n="programa.closing">Cierre</p>
+          <p class="tl-note" data-i18n="programa.closingNote">Hasta que las estrellas se apaguen</p>
         </div>
       </div>
 
@@ -726,62 +761,62 @@
 
   <!-- ===================== DETALLES ===================== -->
   <section class="detalles" data-screen-label="Detalles">
-    <p class="eyebrow reveal">Lo que debes saber</p>
-    <h2 class="sec-title reveal d1">Detalles</h2>
+    <p class="eyebrow reveal" data-i18n="detalles.eyebrow">Lo que debes saber</p>
+    <h2 class="sec-title reveal d1" data-i18n="detalles.title">Detalles</h2>
     <div class="divider reveal d1"><span class="line"></span><span class="dot"></span><span class="line r"></span></div>
 
     <div class="cards">
       <div class="card reveal d1">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l-4 3-4-3-3 4 3 2v9a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-9l3-2z"/></svg>
-        <h4>Código de vestimenta</h4>
-        <p class="big">Formal</p>
-        <p>Por favor evita los colores verde y dorado, están reservados para la quinceañera.</p>
+        <h4 data-i18n="detalles.dressCode">Código de vestimenta</h4>
+        <p class="big" data-i18n="detalles.dressCodeBig">Formal</p>
+        <p data-i18n="detalles.dressCodeText">Por favor evita los colores verde y dorado, están reservados para la quinceañera.</p>
       </div>
 
       <div class="card reveal d2">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S10 3 6.5 3 4 7 7 7M12 7s2-4 5.5-4S20 7 17 7"/></svg>
-        <h4>Regalos</h4>
-        <p class="big">Mesa de regalos</p>
-        <p>Tu presencia es mi mayor regalo. Si deseas obsequiar algo, aquí está mi lista.</p>
+        <h4 data-i18n="detalles.gifts">Regalos</h4>
+        <p class="big" data-i18n="detalles.giftsBig">Mesa de regalos</p>
+        <p data-i18n="detalles.giftsText">Tu presencia es mi mayor regalo. Si deseas obsequiar algo, aquí está mi lista.</p>
         <a class="btn-ghost" href="https://www.amazon.com/wedding/registry" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
-          Ver registro
+          <span data-i18n="detalles.viewRegistry">Ver registro</span>
         </a>
       </div>
 
       <div class="card reveal d3">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14M3 21h18M9 21v-5h6v5M7 10h.01M12 10h.01M17 10h.01M7 14h.01M17 14h.01"/></svg>
-        <h4>Hospedaje</h4>
-        <p class="big">Hoteles recomendados</p>
-        <p>Algunas opciones cerca del venue, en el noroeste de San Antonio.</p>
+        <h4 data-i18n="detalles.lodging">Hospedaje</h4>
+        <p class="big" data-i18n="detalles.lodgingBig">Hoteles recomendados</p>
+        <p data-i18n="detalles.lodgingText">Algunas opciones cerca del venue, en el noroeste de San Antonio.</p>
         <div class="hotel-list">
           <div class="hotel-item">
             <span class="hotel-name">Fairfield by Marriott Inn &amp; Suites San Antonio SeaWorld/Westover Hills</span>
-            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Fairfield+by+Marriott+Inn+%26+Suites+San+Antonio+SeaWorld+Westover+Hills+4026+Wiseman+Blvd+San+Antonio+TX+78251" target="_blank" rel="noopener" aria-label="Ver en mapa">
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Fairfield+by+Marriott+Inn+%26+Suites+San+Antonio+SeaWorld+Westover+Hills+4026+Wiseman+Blvd+San+Antonio+TX+78251" target="_blank" rel="noopener" aria-label="Ver en mapa" data-i18n-aria="hotel.viewOnMap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </a>
           </div>
           <div class="hotel-item">
             <span class="hotel-name">Courtyard San Antonio SeaWorld®/Westover Hills</span>
-            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Courtyard+San+Antonio+SeaWorld+Westover+Hills+11605+State+Hwy+151+San+Antonio+TX+78251" target="_blank" rel="noopener" aria-label="Ver en mapa">
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Courtyard+San+Antonio+SeaWorld+Westover+Hills+11605+State+Hwy+151+San+Antonio+TX+78251" target="_blank" rel="noopener" aria-label="Ver en mapa" data-i18n-aria="hotel.viewOnMap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </a>
           </div>
           <div class="hotel-item">
             <span class="hotel-name">Holiday Inn Express &amp; Suites San Antonio NW Near SeaWorld</span>
-            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+%26+Suites+San+Antonio+NW+Near+Seaworld+9536+Amelia+Pass+San+Antonio+TX+78254" target="_blank" rel="noopener" aria-label="Ver en mapa">
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+%26+Suites+San+Antonio+NW+Near+Seaworld+9536+Amelia+Pass+San+Antonio+TX+78254" target="_blank" rel="noopener" aria-label="Ver en mapa" data-i18n-aria="hotel.viewOnMap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </a>
           </div>
           <div class="hotel-item">
             <span class="hotel-name">Candlewood Suites San Antonio NW Near SeaWorld</span>
-            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Candlewood+Suites+San+Antonio+NW+Near+Seaworld+9502+Amelia+Pass+San+Antonio+TX+78254" target="_blank" rel="noopener" aria-label="Ver en mapa">
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=Candlewood+Suites+San+Antonio+NW+Near+Seaworld+9502+Amelia+Pass+San+Antonio+TX+78254" target="_blank" rel="noopener" aria-label="Ver en mapa" data-i18n-aria="hotel.viewOnMap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </a>
           </div>
           <div class="hotel-item">
             <span class="hotel-name">La Quinta Inn &amp; Suites by Wyndham San Antonio Northwest</span>
-            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=La+Quinta+Inn+%26+Suites+by+Wyndham+San+Antonio+Northwest+11155+W+Loop+1604+N+San+Antonio+TX+78254" target="_blank" rel="noopener" aria-label="Ver en mapa">
+            <a class="hotel-map" href="https://www.google.com/maps/search/?api=1&query=La+Quinta+Inn+%26+Suites+by+Wyndham+San+Antonio+Northwest+11155+W+Loop+1604+N+San+Antonio+TX+78254" target="_blank" rel="noopener" aria-label="Ver en mapa" data-i18n-aria="hotel.viewOnMap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </a>
           </div>
@@ -796,28 +831,28 @@
       <path d="M8 46 L12 22 L24 36 L32 16 L40 36 L52 22 L56 46 Z" fill="#C9A84C" stroke="#E4CC86" stroke-width="1.4" stroke-linejoin="round"/>
       <rect x="8" y="46" width="48" height="7" rx="2" fill="#C9A84C" stroke="#E4CC86" stroke-width="1.2"/>
     </svg>
-    <p class="eyebrow reveal">Acompáñame</p>
-    <h2 class="sec-title reveal d1">Confirma tu<br/>asistencia</h2>
-    <p class="msg reveal d1">Será una noche de cuento, y no estaría completa sin ti. Por favor confirma para reservar tu lugar en el jardín.</p>
-    <p class="deadline reveal d2">Fecha límite · <strong>8 de Agosto 2026</strong></p>
+    <p class="eyebrow reveal" data-i18n="rsvp.eyebrow">Acompáñame</p>
+    <h2 class="sec-title reveal d1" data-i18n="rsvp.title">Confirma tu<br/>asistencia</h2>
+    <p class="msg reveal d1" data-i18n="rsvp.msg">Será una noche de cuento, y no estaría completa sin ti. Por favor confirma para reservar tu lugar en el jardín.</p>
+    <p class="deadline reveal d2" data-i18n="rsvp.deadline">Fecha límite · <strong>8 de Agosto 2026</strong></p>
     <a class="btn-gold reveal d2" href="https://docs.google.com/forms/d/e/1FAIpQLSdoNBpJqleE_ZhfyRlIyXrm4RE3TyQpWnkfUoBWGsTvwZfPdA/viewform?usp=header" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      Confirmar Asistencia
+      <span data-i18n="rsvp.confirmBtn">Confirmar Asistencia</span>
     </a>
   </section>
 
   <!-- ===================== TIMER ===================== -->
   <section class="timer" data-screen-label="Cuenta regresiva">
-    <p class="eyebrow reveal">La magia comienza en</p>
-    <h2 class="sec-title reveal d1">Cuenta Regresiva</h2>
+    <p class="eyebrow reveal" data-i18n="timer.eyebrow">La magia comienza en</p>
+    <h2 class="sec-title reveal d1" data-i18n="timer.title">Cuenta Regresiva</h2>
     <div class="divider reveal d1"><span class="line"></span><span class="dot"></span><span class="line r"></span></div>
-    <p class="lead reveal d1">Sábado 15 de Agosto, 5:00 PM · San Antonio</p>
+    <p class="lead reveal d1" data-i18n="timer.lead">Sábado 15 de Agosto, 5:00 PM · San Antonio</p>
 
     <div class="count reveal d1" id="countdown">
-      <div class="box"><div class="num" id="cd-d">00</div><div class="lbl">Días</div></div>
-      <div class="box"><div class="num" id="cd-h">00</div><div class="lbl">Horas</div></div>
-      <div class="box"><div class="num" id="cd-m">00</div><div class="lbl">Minutos</div></div>
-      <div class="box"><div class="num" id="cd-s">00</div><div class="lbl">Segundos</div></div>
+      <div class="box"><div class="num" id="cd-d">00</div><div class="lbl" data-i18n="timer.days">Días</div></div>
+      <div class="box"><div class="num" id="cd-h">00</div><div class="lbl" data-i18n="timer.hours">Horas</div></div>
+      <div class="box"><div class="num" id="cd-m">00</div><div class="lbl" data-i18n="timer.minutes">Minutos</div></div>
+      <div class="box"><div class="num" id="cd-s">00</div><div class="lbl" data-i18n="timer.seconds">Segundos</div></div>
     </div>
   </section>
 
@@ -925,6 +960,105 @@
     }
     tick();
     var iv = setInterval(tick, 1000);
+  })();
+
+  /* ---------- Language toggle (ES / EN) ---------- */
+  (function () {
+    var translations = {
+      'hero.invite': { es: 'Nancy Sánchez &amp; Juan Martínez te invitan a celebrar', en: 'Nancy Sánchez &amp; Juan Martínez invite you to celebrate' },
+      'hero.sub': { es: 'Quinceañera · XV Años', en: 'Quinceañera · Sweet Fifteen' },
+      'hero.date': { es: 'Sábado 15 de Agosto · 2026', en: 'Saturday, August 15 · 2026' },
+      'hero.cta': { es: 'Cómo llegar', en: 'Get Directions' },
+
+      'padrinos.eyebrow': { es: 'Con la bendición de', en: 'With the blessing of' },
+      'padrinos.title': { es: 'Padrinos', en: 'Godparents' },
+      'padrinos.honorRing': { es: 'Padrinos de Honor y Anillo', en: 'Godparents of Honor & Ring' },
+      'padrinos.bibleRosary': { es: 'Padrinos de Biblia y Rosario', en: 'Godparents of Bible & Rosary' },
+      'padrinos.following': { es: 'Los siguientes', en: 'The following' },
+      'padrinos.sponsors': { es: 'Patrocinadores', en: 'Sponsors' },
+      'padrinos.crown': { es: 'De Corona', en: 'Crown' },
+      'padrinos.dress': { es: 'De Vestido y Último Oso', en: 'Dress & Last Doll' },
+      'padrinos.bracelet': { es: 'De Esclava', en: 'Bracelet' },
+      'padrinos.earrings': { es: 'De Aretes', en: 'Earrings' },
+      'padrinos.necklace': { es: 'De Collar', en: 'Necklace' },
+      'padrinos.surpriseGift': { es: 'Regalo Sorpresa · Sus Hermanos', en: 'Surprise Gift · Her Siblings' },
+
+      'corte.eyebrow': { es: 'Quienes me acompañan', en: 'Those who stand by me' },
+      'corte.title': { es: 'Corte de Honor', en: 'Honor Court' },
+      'corte.lead': { es: 'Mis estrellas en esta noche encantada', en: 'My stars on this enchanted night' },
+
+      'programa.eyebrow': { es: 'El orden de la celebración', en: 'The order of celebration' },
+      'programa.title': { es: 'Programa', en: 'Program' },
+      'programa.reception': { es: 'Recepción', en: 'Reception' },
+      'programa.receptionNote': { es: 'Salón Las Fuentes · Bienvenida', en: 'Salón Las Fuentes · Welcome' },
+      'programa.location': { es: 'Ubicación', en: 'Location' },
+      'programa.dinner': { es: 'Cena', en: 'Dinner' },
+      'programa.dinnerNote': { es: 'Brindis &amp; banquete', en: 'Toast &amp; banquet' },
+      'programa.presentation': { es: 'Presentación / Vals', en: 'Presentation / Waltz' },
+      'programa.presentationNote': { es: 'El primer baile de Alexandra', en: "Alexandra's first dance" },
+      'programa.party': { es: 'Fiesta', en: 'Party' },
+      'programa.partyNote': { es: 'Baile bajo las luces del jardín', en: 'Dancing under the garden lights' },
+      'programa.surprise': { es: 'Baile Sorpresa / Regalo', en: 'Surprise Dance / Gift' },
+      'programa.closing': { es: 'Cierre', en: 'Closing' },
+      'programa.closingNote': { es: 'Hasta que las estrellas se apaguen', en: 'Until the stars fade' },
+
+      'detalles.eyebrow': { es: 'Lo que debes saber', en: 'What you should know' },
+      'detalles.title': { es: 'Detalles', en: 'Details' },
+      'detalles.dressCode': { es: 'Código de vestimenta', en: 'Dress code' },
+      'detalles.dressCodeBig': { es: 'Formal', en: 'Formal' },
+      'detalles.dressCodeText': { es: 'Por favor evita los colores verde y dorado, están reservados para la quinceañera.', en: 'Please avoid wearing green or gold — those colors are reserved for the quinceañera.' },
+      'detalles.gifts': { es: 'Regalos', en: 'Gifts' },
+      'detalles.giftsBig': { es: 'Mesa de regalos', en: 'Gift registry' },
+      'detalles.giftsText': { es: 'Tu presencia es mi mayor regalo. Si deseas obsequiar algo, aquí está mi lista.', en: "Your presence is my greatest gift. If you'd like to give something, here's my registry." },
+      'detalles.viewRegistry': { es: 'Ver registro', en: 'View registry' },
+      'detalles.lodging': { es: 'Hospedaje', en: 'Lodging' },
+      'detalles.lodgingBig': { es: 'Hoteles recomendados', en: 'Recommended hotels' },
+      'detalles.lodgingText': { es: 'Algunas opciones cerca del venue, en el noroeste de San Antonio.', en: 'A few options near the venue, in northwest San Antonio.' },
+      'hotel.viewOnMap': { es: 'Ver en mapa', en: 'View on map' },
+
+      'rsvp.eyebrow': { es: 'Acompáñame', en: 'Join me' },
+      'rsvp.title': { es: 'Confirma tu<br/>asistencia', en: 'Confirm your<br/>attendance' },
+      'rsvp.msg': { es: 'Será una noche de cuento, y no estaría completa sin ti. Por favor confirma para reservar tu lugar en el jardín.', en: "It will be a night straight out of a storybook, and it wouldn't be complete without you. Please confirm to reserve your spot in the garden." },
+      'rsvp.deadline': { es: 'Fecha límite · <strong>8 de Agosto 2026</strong>', en: 'RSVP by · <strong>August 8, 2026</strong>' },
+      'rsvp.confirmBtn': { es: 'Confirmar Asistencia', en: 'Confirm Attendance' },
+
+      'timer.eyebrow': { es: 'La magia comienza en', en: 'The magic begins in' },
+      'timer.title': { es: 'Cuenta Regresiva', en: 'Countdown' },
+      'timer.lead': { es: 'Sábado 15 de Agosto, 5:00 PM · San Antonio', en: 'Saturday, August 15, 5:00 PM · San Antonio' },
+      'timer.days': { es: 'Días', en: 'Days' },
+      'timer.hours': { es: 'Horas', en: 'Hours' },
+      'timer.minutes': { es: 'Minutos', en: 'Minutes' },
+      'timer.seconds': { es: 'Segundos', en: 'Seconds' }
+    };
+    var docTitle = { es: 'Alexandra Ruby · XV Años', en: 'Alexandra Ruby · Sweet Fifteen' };
+
+    var STORAGE_KEY = 'invitation-lang';
+    var btn = document.getElementById('langToggle');
+    if (!btn) return;
+
+    function applyLang(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var entry = translations[el.getAttribute('data-i18n')];
+        if (entry && entry[lang] != null) el.innerHTML = entry[lang];
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var entry = translations[el.getAttribute('data-i18n-aria')];
+        if (entry && entry[lang] != null) el.setAttribute('aria-label', entry[lang]);
+      });
+      document.title = docTitle[lang];
+      document.documentElement.setAttribute('lang', lang);
+      btn.textContent = lang === 'es' ? 'EN' : 'ES';
+      localStorage.setItem(STORAGE_KEY, lang);
+    }
+
+    var current = 'es';
+    try { current = localStorage.getItem(STORAGE_KEY) || 'es'; } catch (e) {}
+    applyLang(current);
+
+    btn.addEventListener('click', function () {
+      current = current === 'es' ? 'en' : 'es';
+      applyLang(current);
+    });
   })();
 </script>
 </body>
